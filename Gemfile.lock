@@ -1,5 +1,5 @@
 PATH
-  remote: ../gems/devise-bootstrap-views-master
+  remote: devise-bootstrap-views-master
   specs:
     devise-bootstrap-views (1.1.0)
 
