@@ -19,3 +19,8 @@
 <div id="results">
   <%= render 'users/result' %>
 </div>
+
+
+<% if @tracked_stocks.any? %> <!-- --He uses !@tracked_stocks.empty? but I used @tracked_stocks.any? and it works still -->
+  <%= render 'stocks/list' %>
+<% end %>
