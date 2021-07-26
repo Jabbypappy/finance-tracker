@@ -1,0 +1,5 @@
+<h1>My Friends</h1>
+
+<% if @friends.any? %> <!-- --He uses !@tracked_stocks.empty? but I used @tracked_stocks.any? and it works still -->
+  <%= render 'friends_list' %>
+<% end %>
