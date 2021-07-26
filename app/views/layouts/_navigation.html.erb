@@ -11,10 +11,10 @@
             <%= link_to "My Portfolio", my_portfolio_path, class: request.path == my_portfolio_path ? "nav-link active" : "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <%= link_to "Friends", "#", class:"nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle <%= "active" if request.path == edit_user_registration_path %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Profile
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
