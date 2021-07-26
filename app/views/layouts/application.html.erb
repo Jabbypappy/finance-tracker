@@ -13,7 +13,13 @@
   <body>
     <%= render '/layouts/navigation' %>
     <div class="container">
-      <%= render '/layouts/messages' %>
+      <% if flash.any? %>
+        <% flash.each do |name, msg| %>
+          <% if name == "alert" || name == "notice" %>
+            <%= render '/layouts/messages' %>
+          <% end %>
+        <% end %>
+      <% end %>
       <%= yield %>
     </div>
   </body>

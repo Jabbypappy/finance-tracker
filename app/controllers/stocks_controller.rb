@@ -9,13 +9,13 @@ class StocksController < ApplicationController
         end
       else
         respond_to do |format|
-          flash.now[:alert] = "Please enter a valid symbol to search"
+          flash.now[:jsalert] = "Please enter a valid symbol to search"
           format.js { render partial: 'users/result' }
         end
       end
     else
       respond_to do |format|
-        flash.now[:alert] = "Please enter a symbol to search" # A whole cycle is not being completed when using Ajax, since the whole page is not being reloaded, so we must use flash.now in order for the alert to only be displayed once, otherwise it will persist for another search of a different ticker as well, which we don't want.
+        flash.now[:jsalert] = "Please enter a symbol to search" # A whole cycle is not being completed when using Ajax, since the whole page is not being reloaded, so we must use flash.now in order for the alert to only be displayed once, otherwise it will persist for another search of a different ticker as well, which we don't want.
         format.js { render partial: 'users/result' }
       end
     end
