@@ -8,6 +8,13 @@ class UsersController < ApplicationController
     @friends = current_user.friends
   end
 
+  def update_stocks
+    @tracked_stocks = current_user.stocks
+    Stock.update_stocks(@tracked_stocks)
+    flash[:notice] = "Stocks have been updated"
+    redirect_to my_portfolio_path
+  end
+
   def show
     @user = User.find(params[:id])
     @tracked_stocks = @user.stocks

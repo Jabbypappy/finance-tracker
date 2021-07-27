@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-9">
+  <div class="col-9 no-right-padding-table">
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -29,5 +29,12 @@
       <% end %>
       </tbody>
     </table>
+  </div>
+  <div class="col-2 no-left-padding-refresh">
+    <%= form_tag update_stocks_path, method: :get do %>
+      <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= fa_icon 'refresh' %>
+      <% end %>
+    <% end %>
   </div>
 </div>
