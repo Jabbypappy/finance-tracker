@@ -1,5 +1,25 @@
 <h1>My Friends</h1>
 
+<div class="search-area">
+  <h3>Search Friends</h3>
+  <%= form_tag search_friend_path, remote: true, method: :get do %> <!-- We add remote true for ajax requests -->
+    <div class="form-group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :friend, params[:friend], placeholder: "Enter name or email", autofocus: true, class: "form-control form-control-lg" %> <!-- :stock after text_field_tag is what we see in the address bar, so we'd see something like '?stock=', but if it was something else, like :hello, then we'd see ?hello= in the address bar -->
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-success" do %>
+          <%= fa_icon 'search 2x' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div id="friend-results">
+
+</div>
+
 <% if @friends.any? %> <!-- --He uses !@tracked_stocks.empty? but I used @tracked_stocks.any? and it works still -->
   <%= render 'friends_list' %>
 <% end %>
